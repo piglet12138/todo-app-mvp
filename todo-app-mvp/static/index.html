@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App - 待办事项管理</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 我的待办事项</h1>
+            <p class="subtitle">简单高效的待办事项管理工具</p>
+        </header>
+
+        <!-- 添加待办事项表单 -->
+        <div class="add-todo-section">
+            <h2>添加新待办</h2>
+            <form id="todoForm">
+                <div class="form-group">
+                    <label for="title">标题 *</label>
+                    <input type="text" id="title" name="title" required placeholder="输入待办事项标题...">
+                </div>
+                <div class="form-group">
+                    <label for="description">描述（可选）</label>
+                    <textarea id="description" name="description" rows="3" placeholder="输入详细描述..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">添加待办</button>
+            </form>
+        </div>
+
+        <!-- 筛选和统计 -->
+        <div class="filter-section">
+            <div class="stats">
+                <span>总计: <strong id="totalCount">0</strong></span>
+                <span>已完成: <strong id="completedCount">0</strong></span>
+                <span>未完成: <strong id="pendingCount">0</strong></span>
+            </div>
+            <div class="filter-buttons">
+                <button class="btn-filter active" data-filter="all">全部</button>
+                <button class="btn-filter" data-filter="pending">未完成</button>
+                <button class="btn-filter" data-filter="completed">已完成</button>
+            </div>
+        </div>
+
+        <!-- 待办事项列表 -->
+        <div class="todos-section">
+            <h2>待办列表</h2>
+            <div id="todosList" class="todos-list">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

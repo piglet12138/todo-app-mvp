@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: todo-app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+    # 开发时可以挂载代码目录(生产环境不建议)
+    # volumes:
+    #   - .:/app
+    restart: unless-stopped

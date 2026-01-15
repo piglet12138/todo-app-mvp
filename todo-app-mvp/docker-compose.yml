@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  todo-app:
+    build: .
+    container_name: todo-app-mvp
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    # 开发时可以挂载代码目录以便热重载（生产环境不建议）
+    # volumes:
+    #   - ./app:/app/app
+    #   - ./static:/app/static
